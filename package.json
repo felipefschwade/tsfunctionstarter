@@ -1,29 +1,16 @@
 {
   "name": "functions",
   "scripts": {
-    "dev:serve": "ts-node src/dev-server.ts",
-    "dev": "node ./node_modules/nodemon/bin/nodemon.js",
+    "dev": "node --inspect -r ts-node/register src/dev-server.ts",
     "lint": "tslint --project tsconfig.json",
     "build": "tsc",
     "serve": "npm run build && firebase serve --only functions",
     "shell": "npm run build && firebase functions:shell",
-    "start": "npm run shell",
+    "start": "nodemon",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "test": "jest",
-    "test:watch": "jest --watch"
-  },
-  "jest": {
-    "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json"
-    ]
+    "test": "jest --config ./__test__/jest.config.js",
+    "test:watch": "npm test -- --watch"
   },
   "main": "lib/index.js",
   "dependencies": {

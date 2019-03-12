@@ -1,3 +1,3 @@
-import api from './api';
+import app from './app';
 
-api.listen(8000, () => console.log('Servidor escutando na porta 8000'));
+app.listen(8000, () => console.log('Servidor escutando na porta 8000'));

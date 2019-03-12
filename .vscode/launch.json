@@ -11,6 +11,23 @@
         "protocol": "inspector",
         "restart": true,
         "processId": "${command:PickProcess}"
-      }
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Jest All",
+        "program": "${workspaceFolder}/node_modules/.bin/jest",
+        "args": [
+          "--runInBand",
+          "--config",
+          "${workspaceFolder}/__test__/jest.config.js"
+        ],
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen",
+        "disableOptimisticBPs": true,
+        "windows": {
+          "program": "${workspaceFolder}/node_modules/jest/bin/jest",
+        }
+      },
     ]
 }

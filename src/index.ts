@@ -1,5 +1,5 @@
 import * as functions from 'firebase-functions';
-import api from './api';
+import app from './app';
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
 //
@@ -7,4 +7,4 @@ import api from './api';
 //  response.send("Hello from Firebase!");
 // });
 
-export const helloWorld = functions.https.onRequest(api);
+export const helloWorld = functions.https.onRequest(app);
