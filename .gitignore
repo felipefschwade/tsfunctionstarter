@@ -1,7 +1,7 @@
 ## Compiled JavaScript files
 **/*.js
 **/*.js.map
-**/__test__/coverage
+**/coverage
 
 # Typescript v1 declaration files
 typings/

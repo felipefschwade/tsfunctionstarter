@@ -9,7 +9,7 @@
     "start": "nodemon",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "test": "jest --config ./__test__/jest.config.js",
+    "test": "jest --config ./jest.config.js",
     "test:watch": "npm test -- --watch"
   },
   "main": "lib/index.js",
