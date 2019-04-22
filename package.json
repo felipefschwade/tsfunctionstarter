@@ -5,11 +5,11 @@
     "lint": "tslint --project tsconfig.json",
     "prebuild": "npm run lint",
     "build": "tsc",
-    "postbuild": "cp ./package.json ./functions && npm install",
+    "build:prod": "cp ./package.json ./functions && npm install",
     "serve": "npm run build && cd ./functions && firebase serve --only functions",
     "shell": "npm run build && firebase functions:shell",
     "start": "nodemon",
-    "deploy": "npm run build && cd ./functions && firebase deploy --only functions",
+    "deploy": "npm run build:prod && cd ./functions && firebase deploy --only functions",
     "logs": "firebase functions:log",
     "test": "jest --config ./jest.config.js",
     "test:watch": "npm test -- --watch"
