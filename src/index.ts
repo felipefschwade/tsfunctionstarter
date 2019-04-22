@@ -7,4 +7,4 @@ import app from './app';
 //  response.send("Hello from Firebase!");
 // });
 
-export const helloWorld = functions.https.onRequest(app);
+export const api = functions.https.onRequest(app);

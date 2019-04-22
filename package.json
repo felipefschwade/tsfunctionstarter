@@ -3,16 +3,18 @@
   "scripts": {
     "dev": "node --inspect -r ts-node/register src/dev-server.ts",
     "lint": "tslint --project tsconfig.json",
+    "prebuild": "npm run lint",
     "build": "tsc",
-    "serve": "npm run build && firebase serve --only functions",
+    "postbuild": "cp ./package.json ./functions && npm install",
+    "serve": "npm run build && cd ./functions && firebase serve --only functions",
     "shell": "npm run build && firebase functions:shell",
     "start": "nodemon",
-    "deploy": "firebase deploy --only functions",
+    "deploy": "npm run build && cd ./functions && firebase deploy --only functions",
     "logs": "firebase functions:log",
     "test": "jest --config ./jest.config.js",
     "test:watch": "npm test -- --watch"
   },
-  "main": "lib/index.js",
+  "main": "./index.js",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
