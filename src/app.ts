@@ -3,7 +3,6 @@ import * as cors from "cors";
 import * as bodyParser from 'body-parser';
 import * as expressBearerToken from 'express-bearer-token';
 import { Routes } from "./routes/Routes";
-
 class App {
 
   public app: express.Application;

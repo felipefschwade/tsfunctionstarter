@@ -5,7 +5,7 @@
     "lint": "tslint --project tsconfig.json",
     "prebuild": "npm run lint",
     "build": "tsc",
-    "build:prod": "cp ./package.json ./functions && npm install",
+    "build:prod": "npm run build && cp ./package.json ./functions && npm install",
     "serve": "npm run build && cd ./functions && firebase serve --only functions",
     "shell": "npm run build && firebase functions:shell",
     "start": "nodemon",

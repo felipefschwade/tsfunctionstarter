@@ -1,3 +1,4 @@
 import app from './app';
+import config from './config';
 
-app.listen(8000, () => console.log('Servidor escutando na porta 8000'));
+app.listen(config.devPort, () => console.log(`Servidor escutando na porta ${config.devPort}`));
